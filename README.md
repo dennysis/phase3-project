@@ -41,38 +41,8 @@ Upon running the CLI, you will be presented with several options:
 #### Database Models
 
 
-  +-----------+      Many-to-Many       +-----------+
-  |           |-------------------------|           |
-  |  Patient  |                         |   Doctor  |
-  |           |-------------------------|           |
-  +-----------+                         +-----------+
-       |                                     |
-       |                                     |
-       |                                     |
-       |                                     |
-       |                                     |
-       |                                     |
-       |                                     |
-       +-------------------------------------+
-                       Many-to-One
-                          |
-                          |
-                          |
-                          |
-                          |
-                          |
-                          |
-                     +-----------+
-                     |           |
-                     | Appointment|
-                     |           |
-                     +-----------+
 
-
-
-
-## How It Maps to the Database
-# Patients:
+#### Patients:
 
 id: Integer, Primary Key
 name: String
@@ -82,14 +52,14 @@ status: String (e.g., admitted, released)
 prescription: String
 
 
-# Doctors:
+#### Doctors:
 
 id: Integer, Primary Key
 name: String
 specialty: String
 
 
-# Appointments:
+#### Appointments:
 
 id: Integer, Primary Key
 doctor_id: Integer, Foreign Key referencing Doctors.id
@@ -97,14 +67,14 @@ patient_id: Integer, Foreign Key referencing Patients.id
 date: DateTime
 
 
-# patient_doctor_association (Association Table):
+#### patient_doctor_association (Association Table):
 
 patient_id: Integer, Foreign Key referencing Patients.id
 doctor_id: Integer, Foreign Key referencing Doctors.id
 
 
 
-### Contributing
+# Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
 # License
