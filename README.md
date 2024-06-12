@@ -6,22 +6,22 @@
 
 # Afia Records
 
-### Description
+## Description
 The Medical Record System is a command-line application designed to manage patient and doctor information, as well as schedule and list appointments. This system uses SQLite as the database backend and SQLAlchemy as the ORM (Object Relational Mapper).
 
-### MNP Features
+## MNP Features
 -Add, delete, and list patients.
 -Admit and release patients with a prescription.
 -Schedule appointments between doctors and patients.
 -List all scheduled appointments.
 
 
-### pre-requiements 
+## pre-requiements 
 -Python 3.x
 -Click library (pip install click)
 -SQLAlchemy library (pip install sqlalchemy)
 
-#### usage
+## usage
 Run the command-line interface (CLI) to manage patients and appointments:
 
 (python lib/cli.py)
@@ -38,7 +38,7 @@ Upon running the CLI, you will be presented with several options:
 1. Exit: Exit the CLI.
 
 
-#### Database Models
+# Database Models
 
 
 
