@@ -19,7 +19,8 @@ def manage_patients():
         click.echo("5: Release Patient")
         click.echo("6: Schedule Appointment")
         click.echo("7: List Appointments")
-        click.echo("8: Exit")
+        click.echo("8: Update Patient Heartbeat")
+        click.echo("9: Exit")
 
         choice = click.prompt("Enter the number of your choice", type=int)
         click.echo(f'You chose: {choice}')  # Debug output
@@ -49,6 +50,10 @@ def manage_patients():
         elif choice == 7:
             list_appointments()
         elif choice == 8:
+            patient_id = click.prompt("Enter patient ID", type=int)
+            heartbeat = click.prompt("Enter new heartbeat frequency (Hz)", type=int)
+            update_patient(patient_id, heartbeat)
+        elif choice == 9:
             click.echo("Exiting...")
             break
         else:
@@ -112,6 +117,19 @@ def release_patient(patient_id, prescription):
             click.echo('Patient not found.')
     except Exception as e:
         click.echo(f'Error releasing patient: {e}')
+
+def update_patient(patient_id, heartbeat):
+    """Update a patient's heartbeat."""
+    try:
+        patient = session.query(Patient).get(patient_id)
+        if patient:
+            patient.heartbeat = heartbeat
+            session.commit()
+            click.echo(f'Patient {patient.name} heartbeat updated to {heartbeat} Hz.')
+        else:
+            click.echo('Patient not found.')
+    except Exception as e:
+        click.echo(f'Error updating patient heartbeat: {e}')
 
 def schedule_appointment(doctor_id, patient_id, appointment_date):
     """Schedule an appointment for a patient with a doctor."""
