@@ -1,11 +1,13 @@
-# lib/debug.py
+from lib.db.app import get_session, init_db
+from lib.db.models import Ward, Patient
 
-from db.models import Session
-
-def debug_db():
-    session = Session()
-    # Perform debug operations
-    session.close()
+def debug():
+    init_db()
+    session = get_session()
+    # Add debug code here
+    ward = Ward(ward_number=1)
+    session.add(ward)
+    session.commit()
 
 if __name__ == '__main__':
-    debug_db()
+    debug()

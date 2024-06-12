@@ -1,5 +1,4 @@
-# lib/helpers.py
-
-def example_helper():
-    # Example helper function
-    pass
+def calculate_bmi(weight, height):
+    if height > 0:
+        return weight / (height ** 2)
+    return None

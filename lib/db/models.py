@@ -1,6 +1,6 @@
 # lib/db/models.py
 
-from sqlalchemy import create_engine, Column, Integer, String, Date, ForeignKey, Table
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey, Table
 from sqlalchemy.orm import relationship, sessionmaker, declarative_base
 
 Base = declarative_base()
@@ -11,12 +11,12 @@ patient_doctor_association = Table(
     Column('patient_id', Integer, ForeignKey('patients.id')),
     Column('doctor_id', Integer, ForeignKey('doctors.id'))
 )
-
 class Patient(Base):
     __tablename__ = 'patients'
     id = Column(Integer, primary_key=True)
     name = Column(String)
     age = Column(Integer)
+    heartbeat = Column(Integer)
     status = Column(String)  # New field for admission status
     prescription = Column(String)  # New field for prescription upon release
     doctors = relationship('Doctor', secondary=patient_doctor_association, back_populates='patients')
@@ -33,11 +33,14 @@ class Doctor(Base):
 class Appointment(Base):
     __tablename__ = 'appointments'
     id = Column(Integer, primary_key=True)
-    date = Column(Date)
-    patient_id = Column(Integer, ForeignKey('patients.id'))
     doctor_id = Column(Integer, ForeignKey('doctors.id'))
-    patient = relationship('Patient', back_populates='appointments')
-    doctor = relationship('Doctor', back_populates='appointments')
+    patient_id = Column(Integer, ForeignKey('patients.id'))
+    date = Column(DateTime)
+
+    doctor = relationship("Doctor", back_populates="appointments")
+    patient = relationship("Patient", back_populates="appointments")
+
+
 
 # Database setup
 engine = create_engine('sqlite:///medical_record_system.db')
