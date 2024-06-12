@@ -1,15 +1,15 @@
-# lib/db/app.py
+
 
 from models import Session, Patient, Doctor
 
 def seed_data():
     session = Session()
 
-    # Sample patients
+  
     patient1 = Patient(name='John Doe', age=30, status='admitted',heartbeat=72)
     patient2 = Patient(name='Jane Smith', age=25, status='admitted',heartbeat=78)
 
-    # Sample doctors
+   
     doctor1 = Doctor(name='Dr. Brown', specialty='Cardiology')
     doctor2 = Doctor(name='Dr. Green', specialty='Neurology')
 
