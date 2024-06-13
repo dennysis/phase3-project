@@ -10,16 +10,16 @@
 The Medical Record System is a command-line application designed to manage patient and doctor information, as well as schedule and list appointments. This system uses SQLite as the database backend and SQLAlchemy as the ORM (Object Relational Mapper).
 
 ## MNP Features
--Add, delete, and list patients.
--Admit and release patients with a prescription.
--Schedule appointments between doctors and patients.
--List all scheduled appointments.
+* Add, delete, and list patients.
+* Admit and release patients with a prescription.
+* Schedule appointments between doctors and patients.
+* List all scheduled appointments.
 
 
 ## pre-requiements 
--Python 3.x
--Click library (pip install click)
--SQLAlchemy library (pip install sqlalchemy)
+* Python 3.x
+* Click library (pip install click)
+* SQLAlchemy library (pip install sqlalchemy)*
 
 ## usage
 Run the command-line interface (CLI) to manage patients and appointments:
