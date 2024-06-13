@@ -1,4 +1,4 @@
-### AUTHOR
+# AUTHOR
 (Dennis.M.Kiguru)
 
 # Date
@@ -39,8 +39,6 @@ Upon running the CLI, you will be presented with several options:
 
 
 # Database Models
-
-
 
 #### Patients:
 
