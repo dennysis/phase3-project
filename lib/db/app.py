@@ -6,8 +6,8 @@ def seed_data():
     session = Session()
 
   
-    patient1 = Patient(name='John Doe', age=30, status='admitted',heartbeat=72)
-    patient2 = Patient(name='Jane Smith', age=25, status='admitted',heartbeat=78)
+    patient1 = Patient(name='John  Wick', age=30, status='admitted',heartbeat=72)
+    patient2 = Patient(name='Jane Adhiambo', age=25, status='admitted',heartbeat=78)
 
    
     doctor1 = Doctor(name='Dr. Brown', specialty='Cardiology')
