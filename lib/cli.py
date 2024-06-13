@@ -1,13 +1,10 @@
 import click
 from db.models import Session, Patient, Doctor, Appointment
 from datetime import datetime
-
 session = Session()
-
 @click.group()
 def cli():
     pass
-
 def manage_patients():
     """Manage patients: add, delete, list, admit, release, schedule appointment."""
     while True:
