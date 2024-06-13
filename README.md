@@ -59,16 +59,16 @@ Upon running the CLI, you will be presented with several options:
 
 #### Appointments:
 
-id: Integer, Primary Key
-doctor_id: Integer, Foreign Key referencing Doctors.id
-patient_id: Integer, Foreign Key referencing Patients.id
-date: DateTime
+* id: Integer, Primary Key
+* doctor_id: Integer, Foreign Key referencing Doctors.id
+* patient_id: Integer, Foreign Key referencing Patients.id
+* date: DateTime
 
 
 #### patient_doctor_association (Association Table):
 
-patient_id: Integer, Foreign Key referencing Patients.id
-doctor_id: Integer, Foreign Key referencing Doctors.id
+* patient_id: Integer, Foreign Key referencing Patients.id
+* doctor_id: Integer, Foreign Key referencing Doctors.id
 
 
 
