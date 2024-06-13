@@ -42,12 +42,12 @@ Upon running the CLI, you will be presented with several options:
 
 #### Patients:
 
-id: Integer, Primary Key
-name: String
-age: Integer
-heartbeat: Integer
-status: String (e.g., admitted, released)
-prescription: String
+* id: Integer, Primary Key
+* name: String
+* age: Integer
+* heartbeat: Integer
+*  status: String (e.g., admitted, released)
+*  prescription: String
 
 
 #### Doctors:
