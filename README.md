@@ -46,15 +46,15 @@ Upon running the CLI, you will be presented with several options:
 * name: String
 * age: Integer
 * heartbeat: Integer
-*  status: String (e.g., admitted, released)
-*  prescription: String
+* status: String (e.g., admitted, released)
+* prescription: String
 
 
 #### Doctors:
 
-id: Integer, Primary Key
-name: String
-specialty: String
+* id: Integer, Primary Key
+* name: String
+* specialty: String
 
 
 #### Appointments:
