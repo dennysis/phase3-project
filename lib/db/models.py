@@ -5,7 +5,6 @@ from sqlalchemy.orm import relationship, sessionmaker, declarative_base
 
 Base = declarative_base()
 
-
 patient_doctor_association = Table(
     'patient_doctor_association', Base.metadata,
     Column('patient_id', Integer, ForeignKey('patients.id')),
@@ -39,9 +38,6 @@ class Appointment(Base):
 
     doctor = relationship("Doctor", back_populates="appointments")
     patient = relationship("Patient", back_populates="appointments")
-
-
-
 
 engine = create_engine('sqlite:///medical_record_system.db')
 Base.metadata.create_all(engine)
