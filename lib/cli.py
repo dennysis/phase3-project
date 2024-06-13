@@ -68,7 +68,6 @@ def add_patient(name, age, heartbeat):
         click.echo(f'Patient {name} added and admitted.')
     except Exception as e:
         click.echo(f'Error adding patient: {e}')
-
 def delete_patient(patient_id):
     """Delete a patient."""
     try:
@@ -141,7 +140,6 @@ def schedule_appointment(doctor_id, patient_id, appointment_date):
         click.echo(f'Appointment scheduled for patient {patient_id} with doctor {doctor_id} on {appointment_date.date()}.')
     except Exception as e:
         click.echo(f'Error scheduling appointment: {e}')
-
 def list_appointments():
     """List all appointments."""
     try:
@@ -152,6 +150,5 @@ def list_appointments():
             click.echo(f'{appointment.id}: Doctor: {doctor_name}, Patient: {patient_name}, Date: {appointment.date}')
     except Exception as e:
         click.echo(f'Error listing appointments: {e}')
-
 if __name__ == '__main__':
     manage_patients()
